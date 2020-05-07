@@ -30,10 +30,10 @@ spec:
         tag: buster
         pullPolicy: Always
       resources:
-        limits: {}
+        limits: 
           cpu: 100m
           memory: 128Mi
-        requests: {}
+        requests: 
           cpu: 100m
           memory: 128Mi
     statefulset:
@@ -64,20 +64,11 @@ spec:
       nodePorts:
         clientPort: ""
         peerPort: ""
-      annotations: {}
     persistence:
       enabled: true
-      annotations: {}
       accessModes:
         - ReadWriteOnce
       size: 1Gi
-    resources:
-      limits: {}
-      #   cpu: 500m
-      #   memory: 1Gi
-      requests: {}
-      #   cpu: 250m
-      #   memory: 256Mi
     livenessProbe:
       enabled: true
       initialDelaySeconds: 60
@@ -92,9 +83,6 @@ spec:
       timeoutSeconds: 5
       successThreshold: 1
       failureThreshold: 5
-    podAnnotations: {}
-    affinity: {}
-    nodeSelector: {}
     tolerations: []
     priorityClassName: ""
     metrics:
@@ -113,7 +101,6 @@ spec:
         schedule: "*/30 * * * *"
         historyLimit: 1
         snapshotHistoryLimit: 1
-        podAnnotations: {}
       pvc:
         size: 1Gi
         storageClassName: nfs
