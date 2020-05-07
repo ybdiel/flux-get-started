@@ -1,3 +1,4 @@
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -27,13 +28,13 @@ spec:
       image:
         registry: docker.io
         repository: bitnami/minideb
-        tag: buster
+        tag: unstable
         pullPolicy: Always
       resources:
-        limits: 
+        limits:
           cpu: 100m
           memory: 128Mi
-        requests: 
+        requests:
           cpu: 100m
           memory: 128Mi
     statefulset:
@@ -67,7 +68,7 @@ spec:
     persistence:
       enabled: true
       accessModes:
-        - ReadWriteOnce
+      - ReadWriteOnce
       size: 1Gi
     livenessProbe:
       enabled: true
