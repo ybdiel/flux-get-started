@@ -11,8 +11,8 @@ spec:
   releaseName: etcd3
   targetNamespace: demo
   timeout: 300
-  resetValues: false
-  forceUpgrade: false
+  resetValues: true
+  forceUpgrade: true
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: etcd
