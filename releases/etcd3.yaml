@@ -45,7 +45,6 @@ spec:
     auth:
       rbac:
         enabled: false
-        rootPassword: password
       client:
         secureTransport: false
         useAutoTLS: false
