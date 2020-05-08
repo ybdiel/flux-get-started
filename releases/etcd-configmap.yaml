@@ -4,5 +4,6 @@ metadata:
   name: etcd-env
   namespace: demo
 data:
-  ETCD_LOGGER: "zap" 
   ALLOW_NONE_AUTHENTICATION: "yes"
+  ETCD_ROOT_PASSWORD: "password"
+
