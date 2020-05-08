@@ -18,6 +18,6 @@ spec:
     name: etcd
     version: 4.7.5
   values:
-    envVarsConfigMap: etcd-env      
-    allowNoneAuthentication: true
+    envVarsConfigMap: etcd-env     
+
 #export ETCD_ROOT_PASSWORD=$(kubectl get secret --namespace default gauche-bumblebee-etcd -o jsonpath="{.data.etcd-root-password}" | base64 --decode)
