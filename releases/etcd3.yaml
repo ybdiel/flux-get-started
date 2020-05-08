@@ -1,12 +1,10 @@
----
 apiVersion: v1
-kind: Secret
+kind: ConfigMap
 metadata:
-  name: etcd3password
-  namespace: demo
-type: Opaque
-stringData:
-  etcd3password: password
+  name: etcd-env-vars
+  namespace: default
+data:
+  ETCD_LOGGER: "zap" 
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -50,6 +48,7 @@ spec:
       replicaCount: 1
       updateStrategy: RollingUpdate
       podManagementPolicy: Parallel
+    envVarsConfigMap: etcd-env-vars
     allowNoneAuthentication: true
     auth:
       rbac:
