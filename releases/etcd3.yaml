@@ -5,7 +5,7 @@ metadata:
   namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~3.2
+    fluxcd.io/tag.chart-image: semver:~3.1
 spec:
   releaseName: etcd3
   targetNamespace: demo
