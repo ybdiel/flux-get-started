@@ -1,4 +1,13 @@
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: etcd3password
+  namespace: demo
+type: Opaque
+stringData:
+  etcd3password: password
+---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -45,7 +54,7 @@ spec:
     auth:
       rbac:
         enabled: false
-        rootPassword: root
+        existingSecret: etcd3password
       client:
         secureTransport: false
         useAutoTLS: false
