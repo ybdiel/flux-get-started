@@ -5,7 +5,7 @@ metadata:
   namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~4.7
+    fluxcd.io/tag.chart-image: semver:~3.2
 spec:
   releaseName: etcd3
   targetNamespace: demo
@@ -13,10 +13,10 @@ spec:
   resetValues: true
   forceUpgrade: true
   chart:
-    repository: https://charts.bitnami.com/bitnami
+    repository: https://kubernetes-charts-incubator.storage.googleapis.com
     name: etcd
-    version: 4.7.5
+    version: 3.2.26
   values:
-    envVarsConfigMap: etcd-env      
-  auth.rbac.enabled : true
-  auth.rbac.rootPassword: password
+    replicas: 1
+    extraEnvs: 
+      - ETCD_LOGGER=zap
