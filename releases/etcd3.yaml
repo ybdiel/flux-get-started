@@ -5,7 +5,7 @@ metadata:
   namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~4.7
+    fluxcd.io/tag.chart-image: semver:~4.3
 spec:
   releaseName: etcd3
   targetNamespace: demo
@@ -15,7 +15,7 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: etcd
-    version: 4.7.5
+    version: 4.3.13
   values:
     image:
       registry: docker.io
