@@ -17,9 +17,4 @@ spec:
     name: etcd
     version: 4.3.13
   values:
-    image:
-      registry: docker.io
-      repository: bitnami/etcd
-      tag: 3.4.7-debian-10-r39
-      pullPolicy: IfNotPresent
     envVarsConfigMap: etcd-env      
