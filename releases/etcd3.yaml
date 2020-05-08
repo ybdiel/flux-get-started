@@ -1,3 +1,4 @@
+  
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -5,7 +6,7 @@ metadata:
   namespace: demo
   annotations:
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~3.1
+    fluxcd.io/tag.chart-image: semver:~4.7
 spec:
   releaseName: etcd3
   targetNamespace: demo
@@ -13,10 +14,8 @@ spec:
   resetValues: true
   forceUpgrade: true
   chart:
-    repository: https://kubernetes-charts-incubator.storage.googleapis.com
+    repository: https://charts.bitnami.com/bitnami
     name: etcd
-    version: 0.7.4
+    version: 4.7.5
   values:
-    replicas: 1
-    extraEnvs: 
-      - ETCD_LOGGER=zap
+    envVarsConfigMap: etcd-env      
