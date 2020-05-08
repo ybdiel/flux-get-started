@@ -54,7 +54,7 @@ spec:
     auth:
       rbac:
         enabled: false
-        existingSecret: etcd3password
+        rootPassword: password
       client:
         secureTransport: false
         useAutoTLS: false
