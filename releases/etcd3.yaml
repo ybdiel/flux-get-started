@@ -40,7 +40,7 @@ spec:
       replicaCount: 1
       updateStrategy: RollingUpdate
       podManagementPolicy: Parallel
-    envVarsConfigMap: etcd-env-vars
+    envVarsConfigMap: etcd-env
     allowNoneAuthentication: true
     auth:
       rbac:
