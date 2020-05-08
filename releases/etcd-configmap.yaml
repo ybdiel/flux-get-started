@@ -5,5 +5,3 @@ metadata:
   namespace: demo
 data:
   ALLOW_NONE_AUTHENTICATION: "yes"
-  ETCD_ROOT_PASSWORD: "password"
-
