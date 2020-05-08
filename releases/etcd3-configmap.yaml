@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: etcd-env-vars
+  namespace: default
+data:
+  ETCD_LOGGER: "zap" 
