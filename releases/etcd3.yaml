@@ -17,5 +17,10 @@ spec:
     repository: https://charts.bitnami.com/bitnami
     name: etcd
     version: 4.7.5
+  values:
+    auth:
+      rbac:
+        enabled: true
+        existingSecret: etcd-auth
 
 #export ETCD_ROOT_PASSWORD=$(kubectl get secret --namespace default gauche-bumblebee-etcd -o jsonpath="{.data.etcd-root-password}" | base64 --decode)
